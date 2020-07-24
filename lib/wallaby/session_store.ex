@@ -7,7 +7,7 @@ defmodule Wallaby.SessionStore do
   def start_link, do: GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
 
   def monitor(session) do
-    GenServer.call(__MODULE__, {:monitor, session}, 10_000)
+    GenServer.call(__MODULE__, {:monitor, session}, 50_000)
   end
 
   def demonitor(session) do
